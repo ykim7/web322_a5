@@ -89,7 +89,6 @@ app.get("/students", (req, res) => {
         dataService
             .getStudentsByStatus(status)
             .then((data) => {
-                console.log("Do you hear me?");
                 if (data.length > 0) res.render("students", { students: data });
                 else res.render("students", { message: "no results" });
             })
@@ -281,7 +280,6 @@ app.post("/program/update", (req, res) => {
     dataService
         .updateProgram(req.body)
         .then((data) => {
-            console.log("here!");
             res.redirect("/programs");
         })
         .catch((err) => {
